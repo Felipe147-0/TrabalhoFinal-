@@ -11,10 +11,20 @@ class Plant (
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     var id : Long,
+
+    @ColumnInfo(name = "species")
     var species : String,
+
+    @ColumnInfo(name = "name")
     var name : String,
+
+    @ColumnInfo(name = "size")
     var size : EPlantSize,
+
+    @ColumnInfo(name = "native")
     var native: Boolean,
+
+    @ColumnInfo(name = "frutiferous")
     var frutiferous: Boolean
 ) {
 }

@@ -6,18 +6,22 @@ import androidx.room.PrimaryKey
 import br.edu.ifsp.dmo.trabalhofinal.data.enums.EUF
 
 @Entity(tableName = "address")
-class Adress (
+class Address (
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     var id : Long,
 
+    @ColumnInfo(name = "uf")
     var uf: EUF,
 
+    @ColumnInfo(name = "city")
     var city : String,
 
+    @ColumnInfo(name = "district")
     var district : String,
 
+    @ColumnInfo(name = "street")
     var street : String
 
 ){
