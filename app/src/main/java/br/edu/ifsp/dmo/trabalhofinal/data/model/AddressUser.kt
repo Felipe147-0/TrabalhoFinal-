@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 
-@Entity(tableName = "address_client",
+@Entity(tableName = "address_user",
     primaryKeys = ["id_user" , "id_address"],
     foreignKeys = [
         ForeignKey(
@@ -14,20 +14,20 @@ import androidx.room.ForeignKey
             onDelete = ForeignKey.CASCADE
         ),
         ForeignKey(
-            entity = Client::class,
+            entity = User::class,
             parentColumns = ["id"],
-            childColumns = ["id_client"],
+            childColumns = ["id_user"],
             onDelete = ForeignKey.CASCADE
         )
     ]
 )
-class AddressClient(
+class AddressUser(
 
     @ColumnInfo(name = "id_address")
     var idAddress: Long,
 
-    @ColumnInfo(name = "id_client")
-    var idClient: Long
+    @ColumnInfo(name = "id_user")
+    var idUser: Long
 
 ) {
 }

@@ -13,7 +13,7 @@ import br.edu.ifsp.dmo.trabalhofinal.data.dao.PlantDao
 import br.edu.ifsp.dmo.trabalhofinal.data.dao.PlantUserDao
 import br.edu.ifsp.dmo.trabalhofinal.data.dao.SupplierDao
 import br.edu.ifsp.dmo.trabalhofinal.data.dao.UserDao
-import br.edu.ifsp.dmo.trabalhofinal.data.model.AddressClient
+import br.edu.ifsp.dmo.trabalhofinal.data.model.AddressUser
 import br.edu.ifsp.dmo.trabalhofinal.data.model.Client
 import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant
 import br.edu.ifsp.dmo.trabalhofinal.data.model.PlantUser
@@ -24,7 +24,7 @@ import br.edu.ifsp.dmo.trabalhofinal.data.model.User
 @TypeConverters(TypeConverters::class)
 @Database(entities = [
     Address::class,
-    AddressClient::class,
+    AddressUser::class,
     Client::class,
     Plant::class,
     PlantUser::class,

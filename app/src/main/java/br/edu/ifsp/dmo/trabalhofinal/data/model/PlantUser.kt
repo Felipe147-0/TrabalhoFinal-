@@ -27,7 +27,10 @@ class PlantUser (
     var idPlant: Long,
 
     @ColumnInfo(name = "id_user")
-    var idUser: Long
+    var idUser: Long,
+
+    @ColumnInfo(name = "quantity")
+    var quantity: Int
 ) {
 
 }
