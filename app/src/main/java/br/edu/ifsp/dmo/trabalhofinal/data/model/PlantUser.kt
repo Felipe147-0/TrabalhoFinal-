@@ -4,8 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 
-@Entity(tableName = "plant_supplier",
-    primaryKeys = ["id_plant" , "id_supplier"],
+@Entity(tableName = "plant_user",
+    primaryKeys = ["id_plant" , "id_user"],
     foreignKeys = [
         ForeignKey(
             entity = Plant::class,
@@ -14,20 +14,20 @@ import androidx.room.ForeignKey
             onDelete = ForeignKey.CASCADE
         ),
         ForeignKey(
-            entity = Supplier::class,
+            entity = User::class,
             parentColumns = ["id"],
-            childColumns = ["id_supplier"],
+            childColumns = ["id_user"],
             onDelete = ForeignKey.CASCADE
         )
     ]
 )
-class PlantSupplier (
+class PlantUser (
 
     @ColumnInfo(name = "id_plant")
     var idPlant: Long,
 
-    @ColumnInfo(name = "id_supplier")
-    var idSupplier: Long
+    @ColumnInfo(name = "id_user")
+    var idUser: Long
 ) {
 
 }

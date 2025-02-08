@@ -10,13 +10,13 @@ import br.edu.ifsp.dmo.trabalhofinal.data.dao.AddressClientDao
 import br.edu.ifsp.dmo.trabalhofinal.data.dao.AddressDao
 import br.edu.ifsp.dmo.trabalhofinal.data.dao.ClientDao
 import br.edu.ifsp.dmo.trabalhofinal.data.dao.PlantDao
-import br.edu.ifsp.dmo.trabalhofinal.data.dao.PlantSupplierDao
+import br.edu.ifsp.dmo.trabalhofinal.data.dao.PlantUserDao
 import br.edu.ifsp.dmo.trabalhofinal.data.dao.SupplierDao
 import br.edu.ifsp.dmo.trabalhofinal.data.dao.UserDao
 import br.edu.ifsp.dmo.trabalhofinal.data.model.AddressClient
 import br.edu.ifsp.dmo.trabalhofinal.data.model.Client
 import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant
-import br.edu.ifsp.dmo.trabalhofinal.data.model.PlantSupplier
+import br.edu.ifsp.dmo.trabalhofinal.data.model.PlantUser
 import br.edu.ifsp.dmo.trabalhofinal.data.model.Supplier
 import br.edu.ifsp.dmo.trabalhofinal.data.model.User
 
@@ -27,7 +27,7 @@ import br.edu.ifsp.dmo.trabalhofinal.data.model.User
     AddressClient::class,
     Client::class,
     Plant::class,
-    PlantSupplier::class,
+    PlantUser::class,
     Supplier::class,
     User::class],
     version = 1)
@@ -52,7 +52,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun getAddressClientDao(): AddressClientDao
     abstract fun getClientDao(): ClientDao
     abstract fun getPlantDao(): PlantDao
-    abstract fun getPlantSupplier(): PlantSupplierDao
+    abstract fun getPlantUser(): PlantUserDao
     abstract fun getSupplier(): SupplierDao
     abstract fun getUser(): UserDao
 
