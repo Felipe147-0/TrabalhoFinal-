@@ -8,7 +8,7 @@ import androidx.room.Update
 import br.edu.ifsp.dmo.trabalhofinal.data.model.AddressUser
 
 @Dao
-interface AddressClientDao {
+interface AddressUserDao {
 
     @Insert
     suspend fun insert(addressUser: AddressUser): Long
@@ -19,16 +19,16 @@ interface AddressClientDao {
     @Delete
     suspend fun delete(addressUser: AddressUser): Int
 
-    @Query("SELECT * FROM address_client")
+    @Query("SELECT * FROM address_user")
     suspend fun selectAll(): List<AddressUser>
 
-    @Query("SELECT * FROM address_client WHERE id_address = :id")
+    @Query("SELECT * FROM address_user WHERE id_address = :id")
     suspend fun selectByIdAddress(id: Long): List<AddressUser>
 
-    @Query("SELECT * FROM address_client WHERE id_client = :id")
+    @Query("SELECT * FROM address_user WHERE id_user = :id")
     suspend fun selectByIdClient(id: Long): List<AddressUser>
 
-    @Query("SELECT * FROM address_client WHERE id_address = :idAddress AND id_client = :idClient LIMIT 1")
+    @Query("SELECT * FROM address_user WHERE id_address = :idAddress AND id_user = :idClient LIMIT 1")
     suspend fun selectByIdAddressAndIdClient(idAddress: Long, idClient: Long): AddressUser
 
 }

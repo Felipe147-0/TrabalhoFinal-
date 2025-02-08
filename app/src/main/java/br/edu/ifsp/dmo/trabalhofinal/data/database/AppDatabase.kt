@@ -6,7 +6,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import br.edu.ifsp.dmo.trabalhofinal.data.dao.AddressClientDao
+import br.edu.ifsp.dmo.trabalhofinal.data.dao.AddressUserDao
 import br.edu.ifsp.dmo.trabalhofinal.data.dao.AddressDao
 import br.edu.ifsp.dmo.trabalhofinal.data.dao.ClientDao
 import br.edu.ifsp.dmo.trabalhofinal.data.dao.PlantDao
@@ -49,7 +49,7 @@ abstract class AppDatabase : RoomDatabase() {
     }
 
     abstract fun getAddressDao(): AddressDao
-    abstract fun getAddressClientDao(): AddressClientDao
+    abstract fun getAddressUserDao(): AddressUserDao
     abstract fun getClientDao(): ClientDao
     abstract fun getPlantDao(): PlantDao
     abstract fun getPlantUser(): PlantUserDao
