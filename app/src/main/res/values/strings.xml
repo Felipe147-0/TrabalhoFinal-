@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">TrabalhoFinal</string>
+    <string name="app_title">Conexão Verde</string>
+    <string name="hint_email">E-mail</string>
+    <string name="hint_password">Senha</string>
+    <string name="save_login">Salvar dados de login</string>
+    <string name="stay_logged_in">Manter logado</string>
+    <string name="login">Entrar</string>
+    <string name="register">Cadastre-se</string>
+    <string name="more_info">Saiba Mais!</string>
 </resources>
