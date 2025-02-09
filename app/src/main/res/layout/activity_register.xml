@@ -48,7 +48,8 @@
             android:id="@+id/radioOpt1"
             android:text="@string/supplier"
             android:textSize="16sp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:checked="true"/>
 
         <RadioButton
             android:layout_width="0dp"
