@@ -17,4 +17,9 @@
     <string name="city">Cidade</string>
     <string name="finalize">Finalizar</string>
     <string name="back">Voltar</string>
+    <string name="choose_button_pesquisar">PESQUISAR</string>
+    <string name="choose_text_info">Aperte o botão abaixo para avaliar as opções:</string>
+    <string name="choose_text_type">Nativa ou Frutífera:</string>
+    <string name="choose_text_size">Escolha o tamanho da Arvore:</string>
+    <string name="choose_text_title">Escolha um tipo de Arvore que deseja plantar:</string>
 </resources>
