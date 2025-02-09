@@ -16,4 +16,8 @@ class UserRepository(context:Context) {
     suspend fun findById(id:Long) : User {
         return dao.selectById(id)
     }
+
+    suspend fun insert(user: User) : Long{
+        return dao.insert(user)
+    }
 }

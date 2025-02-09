@@ -10,7 +10,7 @@ class Address (
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id : Long,
+    var id : Long = 0,
 
     @ColumnInfo(name = "uf")
     var uf: EUF,

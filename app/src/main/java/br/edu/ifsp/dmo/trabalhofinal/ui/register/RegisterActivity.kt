@@ -2,6 +2,7 @@ package br.edu.ifsp.dmo.trabalhofinal.ui.register
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import androidx.activity.enableEdgeToEdge
@@ -42,15 +43,23 @@ class RegisterActivity : AppCompatActivity() {
                     EUserType.CLIENT
                 }
             }
+            Log.v("FORM_VALUES",tipo.toString())
 
             val name = binding.textName.text.toString()
+            Log.v("FORM_VALUES",name)
             val street = binding.textStreet.text.toString()
+            Log.v("FORM_VALUES",street)
             val district = binding.textDistrict.text.toString()
+            Log.v("FORM_VALUES",district)
             val city = binding.textCity.text.toString()
+            Log.v("FORM_VALUES",city)
             val email = binding.textEmail.text.toString()
+            Log.v("FORM_VALUES",email)
             val password = binding.textPassword.text.toString()
+            Log.v("FORM_VALUES",password)
 
             val state = listOf(EUF.entries.toTypedArray())[binding.spinnerStates.selectedItemPosition]
+            Log.v("FORM_VALUES",state.toString())
 
             val mIntent = Intent()
             mIntent.putExtra("type",tipo)

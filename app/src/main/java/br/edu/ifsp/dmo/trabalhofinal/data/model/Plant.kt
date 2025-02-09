@@ -10,7 +10,7 @@ class Plant (
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id : Long,
+    var id : Long = 0,
 
     @ColumnInfo(name = "species")
     var species : String,

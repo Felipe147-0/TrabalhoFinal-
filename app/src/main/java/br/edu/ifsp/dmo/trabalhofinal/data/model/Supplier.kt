@@ -21,7 +21,7 @@ class Supplier (
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id : Long,
+    var id : Long = 0,
 
     @ColumnInfo(name = "id_cv_user")
     var idUser : Long
