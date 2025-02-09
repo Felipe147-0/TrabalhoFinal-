@@ -1,7 +1,6 @@
 package br.edu.ifsp.dmo.trabalhofinal.data.database
 
 import android.content.Context
-import android.location.Address
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -19,9 +18,9 @@ import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant
 import br.edu.ifsp.dmo.trabalhofinal.data.model.PlantUser
 import br.edu.ifsp.dmo.trabalhofinal.data.model.Supplier
 import br.edu.ifsp.dmo.trabalhofinal.data.model.User
+import br.edu.ifsp.dmo.trabalhofinal.data.model.Address
 
 
-@TypeConverters(TypeConverters::class)
 @Database(entities = [
     Address::class,
     AddressUser::class,

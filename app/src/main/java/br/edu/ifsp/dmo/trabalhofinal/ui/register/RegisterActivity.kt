@@ -13,6 +13,7 @@ import br.edu.ifsp.dmo.trabalhofinal.R
 import br.edu.ifsp.dmo.trabalhofinal.data.enums.EUF
 import br.edu.ifsp.dmo.trabalhofinal.data.enums.EUserType
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ActivityRegisterBinding
+import kotlin.enums.EnumEntries
 
 class RegisterActivity : AppCompatActivity() {
     private lateinit var binding : ActivityRegisterBinding
@@ -34,32 +35,20 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.buttonRegister.setOnClickListener {
             val checked = binding.radioGroup.checkedRadioButtonId
-            var tipo : EUserType? = null
+            var tipo : String = ""
             if(checked!= -1){
                 val selected = findViewById<RadioButton>(checked)
-                tipo = if(selected.text.toString()=="Fornecedor"){
-                    EUserType.SUPPLIER
-                }else{
-                    EUserType.CLIENT
-                }
+                tipo = selected.text.toString()
             }
-            Log.v("FORM_VALUES",tipo.toString())
 
             val name = binding.textName.text.toString()
-            Log.v("FORM_VALUES",name)
             val street = binding.textStreet.text.toString()
-            Log.v("FORM_VALUES",street)
             val district = binding.textDistrict.text.toString()
-            Log.v("FORM_VALUES",district)
             val city = binding.textCity.text.toString()
-            Log.v("FORM_VALUES",city)
             val email = binding.textEmail.text.toString()
-            Log.v("FORM_VALUES",email)
             val password = binding.textPassword.text.toString()
-            Log.v("FORM_VALUES",password)
 
-            val state = listOf(EUF.entries.toTypedArray())[binding.spinnerStates.selectedItemPosition]
-            Log.v("FORM_VALUES",state.toString())
+            val state = binding.spinnerStates.selectedItemPosition
 
             val mIntent = Intent()
             mIntent.putExtra("type",tipo)
@@ -76,8 +65,8 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun setupSpinner() {
-        val states = listOf(EUF.entries.toTypedArray().toString())
-        val spinner = ArrayAdapter<String>(
+        val states = EUF.entries.toTypedArray()
+        val spinner = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_dropdown_item,
             states

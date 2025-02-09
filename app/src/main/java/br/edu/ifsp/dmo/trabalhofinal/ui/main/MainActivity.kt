@@ -43,14 +43,19 @@ class MainActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult(),
             ActivityResultCallback {
                 if(it.resultCode== RESULT_OK){
-                    val tipo = it.data?.getSerializableExtra("tipo") as EUserType
+                    val tipo = if(it.data?.getStringExtra("tipo")=="Fornecedor"){
+                        EUserType.SUPPLIER
+                    }else{
+                        EUserType.CLIENT
+                    }
+
                     val name = it.data?.getStringExtra("name")
                     val street = it.data?.getStringExtra("street")
                     val district = it.data?.getStringExtra("district")
                     val city = it.data?.getStringExtra("city")
                     val email = it.data?.getStringExtra("email")
                     val password = it.data?.getStringExtra("password")
-                    val state = it.data?.getSerializableExtra("state") as EUF
+                    val state = EUF.entries.toTypedArray()[it.data?.getIntExtra("state", -1)!!]
                     viewModel.registerNewUser(tipo,name,street,district,city,email,password,state)
                 }
             }
