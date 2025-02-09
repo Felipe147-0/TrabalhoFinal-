@@ -8,4 +8,13 @@
     <string name="login">Entrar</string>
     <string name="register">Cadastre-se</string>
     <string name="more_info">Saiba Mais!</string>
+    <string name="create_account">Criar uma conta</string>
+    <string name="supplier">Fornecedor</string>
+    <string name="client">Cliente</string>
+    <string name="full_name">Nome Completo</string>
+    <string name="address">Endereço</string>
+    <string name="district">Bairro</string>
+    <string name="city">Cidade</string>
+    <string name="finalize">Finalizar</string>
+    <string name="back">Voltar</string>
 </resources>
