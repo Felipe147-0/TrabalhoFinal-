@@ -52,8 +52,8 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun getAddressUserDao(): AddressUserDao
     abstract fun getClientDao(): ClientDao
     abstract fun getPlantDao(): PlantDao
-    abstract fun getPlantUser(): PlantUserDao
-    abstract fun getSupplier(): SupplierDao
-    abstract fun getUser(): UserDao
+    abstract fun getPlantUserDao(): PlantUserDao
+    abstract fun getSupplierDao(): SupplierDao
+    abstract fun getUserDao(): UserDao
 
 }
