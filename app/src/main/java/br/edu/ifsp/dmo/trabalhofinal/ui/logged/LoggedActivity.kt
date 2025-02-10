@@ -1,18 +1,26 @@
 package br.edu.ifsp.dmo.trabalhofinal.ui.logged
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import br.edu.ifsp.dmo.trabalhofinal.data.enums.EUserType
 import br.edu.ifsp.dmo.trabalhofinal.data.model.User
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ActivityLoggedBinding
+import br.edu.ifsp.dmo.trabalhofinal.ui.choose.ChooseActivity
+import br.edu.ifsp.dmo.trabalhofinal.ui.plant.PlantActivity
+import br.edu.ifsp.dmo.trabalhofinal.ui.statistics.StatisticsActivity
+import br.edu.ifsp.dmo.trabalhofinal.ui.stock.StockActivity
 
 class LoggedActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoggedBinding
     private lateinit var viewModel: LoggedViewModel
+    private lateinit var requestResultLauncher: ActivityResultLauncher<Intent>
+    private lateinit var registerResultLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,7 +31,7 @@ class LoggedActivity : AppCompatActivity() {
         openBundle()
         setupListeners()
         setupObservers()
-        setupLauncher()
+        setupLaunchers()
     }
 
     private fun openBundle() {
@@ -49,6 +57,45 @@ class LoggedActivity : AppCompatActivity() {
         binding.buttonQuit.setOnClickListener {
             handleLogout()
         }
+
+        binding.buttonStatistic.setOnClickListener {
+            handleStatistics()
+        }
+
+        binding.clientButtonRequest.setOnClickListener {
+            handleRequest()
+        }
+
+        binding.supplierButtonRegister.setOnClickListener {
+            handleRegister()
+        }
+
+        binding.supplierButtonStock.setOnClickListener {
+            handleStock()
+        }
+    }
+
+    private fun handleStock() {
+        val mIntent = Intent(this,StockActivity::class.java)
+        startActivity(mIntent)
+    }
+
+    private fun handleRegister() {
+        val mIntent = Intent(this,PlantActivity::class.java)
+        mIntent.putExtra("user_id",binding.userId.text.toString())
+        registerResultLauncher.launch(mIntent)
+    }
+
+    private fun handleRequest() {
+        val mIntent = Intent(this,ChooseActivity::class.java)
+        mIntent.putExtra("user_id",binding.userId.text.toString())
+        requestResultLauncher.launch(mIntent)
+    }
+
+    private fun handleStatistics() {
+        val mIntent = Intent(this,StatisticsActivity::class.java)
+        mIntent.putExtra("user_id",binding.userId.text.toString())
+        startActivity(mIntent)
     }
 
     private fun handleLogout() {
@@ -62,7 +109,7 @@ class LoggedActivity : AppCompatActivity() {
         })
     }
 
-    private fun setupLauncher() {
+    private fun setupLaunchers() {
 
     }
 }
