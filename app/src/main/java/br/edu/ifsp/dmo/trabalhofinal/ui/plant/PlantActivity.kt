@@ -8,7 +8,7 @@ import br.edu.ifsp.dmo.trabalhofinal.R
 import br.edu.ifsp.dmo.trabalhofinal.data.enums.EPlantSize
 import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ActivityPlantBinding
-import br.edu.ifsp.dmo.trabalhofinal.ui.plant.PlantViewModel
+/*import br.edu.ifsp.dmo.trabalhofinal.ui.plant.PlantViewModel
 
 typealias Size = EPlantSize
 
@@ -66,4 +66,4 @@ class PlantActivity : AppCompatActivity() {
             finish()
         }
     }
-}
+}*/
