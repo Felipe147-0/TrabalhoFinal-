@@ -28,4 +28,8 @@
     <string name="logged_text_register">Cadastrar</string>
     <string name="logged_text_request">Requisitar</string>
     <string name="logged_text_title">Seja bem-vindo!</string>
+    <string name="info_text_description">Nosso aplicativo conecta pessoas a um projeto social de revitalização urbana por meio da doação de mudas de árvores. Ele incentiva o reflorestamento urbano, facilitando o acesso a mudas para que qualquer pessoa possa cultivar sua própria árvore e contribuir para um ambiente mais verde.</string>
+    <string name="info_textview_link1">Clique aqui para acessar o site</string>
+    <string name="info_text_subtitle">Mais informações</string>
+    <string name="info_text_back">Voltar</string>
 </resources>
