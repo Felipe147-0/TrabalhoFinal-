@@ -75,19 +75,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="@string/logged_text_stock"
-        android:visibility="gone"
-        app:backgroundTint="@color/light_blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/supplier_button_register" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_statistic"
-        style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
         android:text="@string/logged_text_statistic"
         app:backgroundTint="@color/light_blue"
         app:layout_constraintBottom_toTopOf="@id/guidelineL75"
