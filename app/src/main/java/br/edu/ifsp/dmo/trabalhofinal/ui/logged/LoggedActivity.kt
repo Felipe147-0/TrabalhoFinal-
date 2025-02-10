@@ -79,6 +79,7 @@ class LoggedActivity : AppCompatActivity() {
 
     private fun handleStock() {
         val mIntent = Intent(this,StockActivity::class.java)
+        mIntent.putExtra("user_id",binding.userId.text.toString())
         startActivity(mIntent)
     }
 
