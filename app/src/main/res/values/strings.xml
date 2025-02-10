@@ -32,4 +32,10 @@
     <string name="info_textview_link1">Clique aqui para acessar o site</string>
     <string name="info_text_subtitle">Mais informações</string>
     <string name="info_text_back">Voltar</string>
+    <string name="plant_text_description">Descrição</string>
+    <string name="plant_text_amount">Quantidade</string>
+    <string name="plant_text_species">Espécie</string>
+    <string name="plant_text_name">Nome</string>
+    <string name="plant_text_subtitle">Cadastre suas Mudas:</string>
+    <string name="plant_text_title">Bem-vindo fornecedor!</string>
 </resources>

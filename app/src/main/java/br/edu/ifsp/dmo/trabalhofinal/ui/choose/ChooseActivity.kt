@@ -1,21 +1,24 @@
 package br.edu.ifsp.dmo.trabalhofinal.ui.choose
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Spinner
+
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import br.edu.ifsp.dmo.trabalhofinal.R
+import br.edu.ifsp.dmo.trabalhofinal.databinding.ActivityChooseBinding
 
 class ChooseActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityChooseBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_choose)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        binding = ActivityChooseBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        val SizeSpinner = binding.chooserSpinnerSize
+
+        //continuacao
+
     }
 }
