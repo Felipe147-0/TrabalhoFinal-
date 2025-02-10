@@ -22,4 +22,10 @@
     <string name="choose_text_type">Nativa ou Frutífera:</string>
     <string name="choose_text_size">Escolha o tamanho da Arvore:</string>
     <string name="choose_text_title">Escolha um tipo de Arvore que deseja plantar:</string>
+    <string name="logged_text_quit">Sair</string>
+    <string name="logged_text_statistic">Estatística</string>
+    <string name="logged_text_stock">Estoque</string>
+    <string name="logged_text_register">Cadastrar</string>
+    <string name="logged_text_request">Requisitar</string>
+    <string name="logged_text_title">Seja bem-vindo!</string>
 </resources>

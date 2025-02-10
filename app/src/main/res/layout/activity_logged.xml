@@ -7,4 +7,125 @@
     android:layout_height="match_parent"
     tools:context=".ui.logged.LoggedActivity">
 
+    <TextView
+        android:id="@+id/logged_text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/logged_text_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="48sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        android:textAlignment="center"
+        >
+    </TextView>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logged_text_title"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        android:textColor="@color/light_green"
+        android:textSize="32sp"
+        android:textAlignment="center">
+
+    </EditText>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineL25"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineL50"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineL75"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/client_button_request"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/logged_text_request"
+        app:layout_constraintEnd_toEndOf="@id/guidelineL50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineL25"
+        app:backgroundTint="@color/light_green"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/supplier_button_register"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/logged_text_register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guidelineL50"
+        app:layout_constraintTop_toBottomOf="@id/guidelineL25"
+        app:backgroundTint="@color/light_green"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/supplier_button_stock"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/logged_text_stock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guidelineL50"
+        app:layout_constraintTop_toBottomOf="@id/supplier_button_register"
+        app:backgroundTint="@color/light_blue"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_statistic"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/logged_text_statistic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guidelineL50"
+        app:layout_constraintTop_toBottomOf="@id/guidelineL75"
+        app:backgroundTint="@color/light_blue"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_quit"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/logged_text_quit"
+        app:layout_constraintEnd_toEndOf="@id/guidelineL50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineL75"
+        app:backgroundTint="@color/red"/>
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
