@@ -109,6 +109,12 @@ class LoggedActivity : AppCompatActivity() {
             Toast.makeText(this,"Logout realizado com sucesso.", Toast.LENGTH_SHORT).show()
             finish()
         })
+
+        viewModel.inserted.observe(this, Observer {
+            if(it){
+                Toast.makeText(this,"Plantas cadastradas com sucesso.", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     private fun setupLaunchers() {
@@ -123,7 +129,10 @@ class LoggedActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult(),
             ActivityResultCallback {
                 if(it.resultCode == RESULT_OK){
-
+                    val plantId = it.data?.getLongExtra("PLANT_ID", 0L)
+                    val quantity = it.data?.getIntExtra("PLANT_QUANTITY", 0)
+                    val userId = binding.userId.text.toString()
+                    viewModel.registerNewPlantUser(userId,plantId!!,quantity!!)
                 }
             }
         )
