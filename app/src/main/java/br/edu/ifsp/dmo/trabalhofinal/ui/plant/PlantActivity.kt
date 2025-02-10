@@ -1,5 +1,6 @@
 package br.edu.ifsp.dmo.trabalhofinal.ui.plant
 
+import android.app.Activity
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -59,6 +60,7 @@ class PlantActivity : AppCompatActivity() {
         val description = binding.textDescription.text.toString().trim()
         val size = Size.entries[binding.plantSpinnerSize.selectedItemPosition]
         val frutiferous = binding.plantSpinnerFrutiferous.selectedItem.toString() == "Frutífera"
+        val quantity = binding.textQuantity.text.toString().toIntOrNull() ?: 0
 
         if (name.isEmpty() || species.isEmpty() || description.isEmpty()) {
             Toast.makeText(this, "Preencha todas as informações, por favor!", Toast.LENGTH_SHORT).show()
@@ -68,11 +70,22 @@ class PlantActivity : AppCompatActivity() {
                 name = name,
                 size = size,
                 frutiferous = frutiferous,
-                description = description
+                description = description,
+                quantity = quantity
             )
             viewModel.insertPlant(plant)
-            Toast.makeText(this, "Planta cadastrada com sucesso!", Toast.LENGTH_SHORT).show()
-            finish()
+            viewModel.plants.observe(this) { plants ->
+                val newPlant = plants.lastOrNull()
+                newPlant?.let {
+                    val resultIntent = intent.apply {
+                        putExtra("PLANT_ID", it.id)
+                    }
+                    setResult(Activity.RESULT_OK, resultIntent)
+                    Toast.makeText(this, "Planta cadastrada com sucesso!", Toast.LENGTH_SHORT)
+                        .show()
+                    finish()
+                }
+            }
         }
     }
 }
