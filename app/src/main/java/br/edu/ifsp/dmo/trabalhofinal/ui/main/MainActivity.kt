@@ -63,6 +63,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupObservers() {
+        viewModel.dataPreferences.observe(this, Observer {
+            val (email,password) = it
+            binding.textEmail.setText(email)
+            if(email.isNotEmpty()){
+                binding.textPassword.setText(password)
+            }
+        })
+
+        viewModel.loginPreferences.observe(this, Observer {
+            val(saveLogin, stayLoggedIn) = it
+            binding.checkboxSaveLogin.isChecked=saveLogin
+            binding.checkboxStayLoggedin.isChecked=stayLoggedIn
+            if(stayLoggedIn){
+                handleLogin()
+            }
+        })
+
         viewModel.loggedIn.observe(this, Observer {
             if(it!=0L){
                 fetchUserForLogged(it)
@@ -92,6 +109,7 @@ class MainActivity : AppCompatActivity() {
         bundle.putSerializable("user",user)
         mIntent.putExtras(bundle)
         startActivity(mIntent)
+        finish()
     }
 
     private fun fetchUserForLogged(id : Long) {

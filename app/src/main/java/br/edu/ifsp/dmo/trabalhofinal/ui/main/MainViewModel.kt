@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import br.edu.ifsp.dmo.trabalhofinal.data.enums.EUF
 import br.edu.ifsp.dmo.trabalhofinal.data.enums.EUserType
@@ -29,14 +30,17 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val clientRepository = ClientRepository(application)
     private val supplierRepository = SupplierRepository(application)
 
+    val loginPreferences: LiveData<Pair<Boolean,Boolean>> = dataStoreRepository.loginPreferences.asLiveData()
+    val dataPreferences: LiveData<Pair<String,String>> = dataStoreRepository.dataPreferences.asLiveData()
+
     private val _loggedIn = MutableLiveData<Long>()
     val loggedIn : LiveData<Long> = _loggedIn
 
     private val _userLogged = MutableLiveData<User>()
     val userLogged : LiveData<User> = _userLogged
 
-    private val _sucessfulInsert = MutableLiveData<Boolean>()
-    val successfulInsert : LiveData<Boolean> = _sucessfulInsert
+    private val _successfulInsert = MutableLiveData<Boolean>()
+    val successfulInsert : LiveData<Boolean> = _successfulInsert
 
     fun login(email:String, senha:String, saveLogin:Boolean, stayLoggedIn:Boolean){
         viewModelScope.launch {
@@ -85,12 +89,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 val addressInsert = addressRepository.insert(address)
                 if(typedInsert && addressInsert > 0){
                     val addressUser = AddressUser(idAddress = addressInsert, idUser = userId)
-                    _sucessfulInsert.value = addressUserRepository.insert(addressUser)
+                    _successfulInsert.value = addressUserRepository.insert(addressUser)
                 }else{
-                    _sucessfulInsert.value = false
+                    _successfulInsert.value = false
                 }
             }else{
-                _sucessfulInsert.value = false
+                _successfulInsert.value = false
             }
         }
     }

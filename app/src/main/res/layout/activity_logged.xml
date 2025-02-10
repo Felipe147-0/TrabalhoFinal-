@@ -11,32 +11,23 @@
         android:id="@+id/logged_text_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/logged_text_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="48sp"
-        android:textStyle="bold"
+        android:text="@string/logged_text_title"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="32sp"
-        android:textAlignment="center"
-        >
-    </TextView>
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
+        android:id="@+id/user_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="text"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logged_text_title"
-        android:layout_marginTop="8dp"
-        android:textStyle="bold"
-        android:textColor="@color/light_green"
-        android:textSize="32sp"
-        android:textAlignment="center">
-
-    </EditText>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineL25"
@@ -45,22 +36,12 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.25" />
 
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineL50"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
-
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineL75"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.75" />
-
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/client_button_request"
@@ -69,10 +50,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/logged_text_request"
-        app:layout_constraintEnd_toEndOf="@id/guidelineL50"
+        app:backgroundTint="@color/light_green"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guidelineL25"
-        app:backgroundTint="@color/light_green"/>
+        app:layout_constraintTop_toBottomOf="@id/guidelineL25" />
 
 
     <com.google.android.material.button.MaterialButton
@@ -82,10 +63,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/logged_text_register"
+        android:visibility="gone"
+        app:backgroundTint="@color/light_green"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineL50"
-        app:layout_constraintTop_toBottomOf="@id/guidelineL25"
-        app:backgroundTint="@color/light_green"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guidelineL25" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/supplier_button_stock"
@@ -94,24 +76,23 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/logged_text_stock"
+        android:visibility="gone"
+        app:backgroundTint="@color/light_blue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineL50"
-        app:layout_constraintTop_toBottomOf="@id/supplier_button_register"
-        app:backgroundTint="@color/light_blue"/>
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/supplier_button_register" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_statistic"
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginBottom="24dp"
         android:text="@string/logged_text_statistic"
+        app:backgroundTint="@color/light_blue"
+        app:layout_constraintBottom_toTopOf="@id/guidelineL75"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/guidelineL50"
-        app:layout_constraintTop_toBottomOf="@id/guidelineL75"
-        app:backgroundTint="@color/light_blue"/>
-
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_quit"
@@ -120,13 +101,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/logged_text_quit"
-        app:layout_constraintEnd_toEndOf="@id/guidelineL50"
+        app:backgroundTint="@color/red"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guidelineL75"
-        app:backgroundTint="@color/red"/>
-
-
-
-
+        app:layout_constraintTop_toBottomOf="@id/guidelineL75" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

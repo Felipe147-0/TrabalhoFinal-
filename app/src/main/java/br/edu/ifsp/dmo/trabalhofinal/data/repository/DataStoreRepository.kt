@@ -7,6 +7,8 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import br.edu.ifsp.dmo.trabalhofinal.util.dataStore
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 
 class DataStoreRepository(context: Context) {
     private val dataStore: DataStore<Preferences> = context.dataStore
@@ -29,5 +31,23 @@ class DataStoreRepository(context: Context) {
             preferences[PreferenceKeys.SAVE_LOGIN] = saveLogin
             preferences[PreferenceKeys.STAY_LOGGED_IN] = stayLoggedIn
         }
+    }
+
+    suspend fun logout() {
+        dataStore.edit { preferences ->
+            preferences[PreferenceKeys.STAY_LOGGED_IN] = false
+        }
+    }
+
+    val loginPreferences: Flow<Pair<Boolean,Boolean>> = dataStore.data.map { preferences ->
+        val saveLogin = preferences[PreferenceKeys.SAVE_LOGIN] ?: false
+        val stayLoggedIn = preferences[PreferenceKeys.STAY_LOGGED_IN] ?: false
+        Pair(saveLogin,stayLoggedIn)
+    }
+
+    val dataPreferences: Flow<Pair<String,String>> = dataStore.data.map { preferences ->
+        val email = preferences[PreferenceKeys.EMAIL] ?: ""
+        val password = preferences[PreferenceKeys.PASSWORD] ?: ""
+        Pair(email,password)
     }
 }
