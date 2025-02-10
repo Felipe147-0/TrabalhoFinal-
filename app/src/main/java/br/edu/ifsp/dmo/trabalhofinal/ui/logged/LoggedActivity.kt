@@ -22,7 +22,8 @@ import br.edu.ifsp.dmo.trabalhofinal.ui.stock.StockActivity
 class LoggedActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoggedBinding
     private lateinit var viewModel: LoggedViewModel
-    private lateinit var resultLauncher: ActivityResultLauncher<Intent>
+    private lateinit var requestResultLauncher: ActivityResultLauncher<Intent>
+    private lateinit var registerResultLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +47,6 @@ class LoggedActivity : AppCompatActivity() {
 
             val id = user.id
             binding.userId.text = id.toString()
-            Log.v("USERTYPE",user.userType.toString())
             if (user.userType == EUserType.SUPPLIER) {
                 binding.clientButtonRequest.visibility = View.GONE
                 binding.supplierButtonStock.visibility = View.VISIBLE
@@ -85,13 +85,13 @@ class LoggedActivity : AppCompatActivity() {
 
     private fun handleRegister() {
         val mIntent = Intent(this,PlantActivity::class.java)
-        startActivity(mIntent)
+        registerResultLauncher.launch(mIntent)
     }
 
     private fun handleRequest() {
         val mIntent = Intent(this,ChooseActivity::class.java)
         mIntent.putExtra("user_id",binding.userId.text.toString())
-        resultLauncher.launch(mIntent)
+        requestResultLauncher.launch(mIntent)
     }
 
     private fun handleStatistics() {
@@ -112,7 +112,14 @@ class LoggedActivity : AppCompatActivity() {
     }
 
     private fun setupLaunchers() {
-        resultLauncher = registerForActivityResult(
+        requestResultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult(),
+            ActivityResultCallback {
+                if(it.resultCode == RESULT_OK){
+                }
+            }
+        )
+        registerResultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult(),
             ActivityResultCallback {
                 if(it.resultCode == RESULT_OK){
