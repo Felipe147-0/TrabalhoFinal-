@@ -70,8 +70,7 @@ class PlantActivity : AppCompatActivity() {
                 name = name,
                 size = size,
                 frutiferous = frutiferous,
-                description = description,
-                quantity = quantity
+                description = description
             )
             viewModel.insertPlant(plant)
             viewModel.plants.observe(this) { plants ->
@@ -79,6 +78,7 @@ class PlantActivity : AppCompatActivity() {
                 newPlant?.let {
                     val resultIntent = intent.apply {
                         putExtra("PLANT_ID", it.id)
+                        putExtra("PLANT_QUANTITY", quantity)
                     }
                     setResult(Activity.RESULT_OK, resultIntent)
                     Toast.makeText(this, "Planta cadastrada com sucesso!", Toast.LENGTH_SHORT)

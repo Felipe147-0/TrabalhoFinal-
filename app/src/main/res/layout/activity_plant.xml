@@ -100,7 +100,7 @@
         android:autofillHints="Size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/plant_spinner_frutiferous"
-        app:layout_constraintTop_toBottomOf="@id/textlayout_amount"
+        app:layout_constraintTop_toBottomOf="@id/textlayout_quantity"
         android:layout_marginTop="16dp"/>
 
     <Spinner
@@ -109,7 +109,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/plant_spinner_size"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textlayout_amount"
+        app:layout_constraintTop_toBottomOf="@id/textlayout_quantity"
         android:layout_marginTop="16dp"/>
 
     <com.google.android.material.textfield.TextInputLayout

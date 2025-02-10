@@ -25,9 +25,6 @@ class Plant (
     var frutiferous: Boolean,
 
     @ColumnInfo(name = "description")
-    var description: String,
-
-    @ColumnInfo(name = "quantity")
-var quantity: Int
+    var description: String
 ) {
 }
