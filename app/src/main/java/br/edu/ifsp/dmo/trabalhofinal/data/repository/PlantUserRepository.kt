@@ -11,4 +11,8 @@ class PlantUserRepository(context: Context) {
     suspend fun insert(plantUser:PlantUser) : Boolean{
         return dao.insert(plantUser)>0
     }
+
+    suspend fun getPlantsByUser(userId: Long): List<PlantUser> {
+        return dao.selectByIdSupplier(userId)
+    }
 }
