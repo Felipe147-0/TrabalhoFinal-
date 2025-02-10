@@ -1,6 +1,7 @@
 package br.edu.ifsp.dmo.trabalhofinal.ui.choose
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 
@@ -15,6 +16,7 @@ import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ActivityChooseBinding
 import br.edu.ifsp.dmo.trabalhofinal.databinding.DialogFilteredPlantsBinding
 import br.edu.ifsp.dmo.trabalhofinal.ui.choose.adapter.PlantAdapter
+import br.edu.ifsp.dmo.trabalhofinal.ui.logged.LoggedActivity
 
 class ChooseActivity : AppCompatActivity() {
     private lateinit var plantViewModel: ChooseViewModel
@@ -64,8 +66,12 @@ class ChooseActivity : AppCompatActivity() {
         dialog.setContentView(binding.root)
 
         val adapter = PlantAdapter(plants){plant ->
-            // fazer a logica de salvar os dados no intent aq
+            val mintent = Intent(this,LoggedActivity::class.java).apply {
+                putExtra("ID_PLANT",plant.id)
+            }
+            setResult(RESULT_OK,mintent)
             dialog.dismiss()
+            finish()
         }
 
         binding.recyclerViewFilteredPlants.layoutManager = LinearLayoutManager(this)
