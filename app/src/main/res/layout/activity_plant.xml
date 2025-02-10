@@ -22,14 +22,12 @@
         >
     </TextView>
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineP20"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.2" />
-
 
     <TextView
         android:id="@+id/plant_text_register"
@@ -43,9 +41,7 @@
         android:textColor="@color/light_green"
         android:textSize="16sp"
         android:textAlignment="center">
-
     </TextView>
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textlayout_namePlant"
@@ -62,8 +58,6 @@
             android:layout_height="wrap_content"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
-
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textlayout_species"
@@ -105,15 +99,14 @@
         android:layout_height="wrap_content"
         android:autofillHints="Size"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/plant_spinner_type"
+        app:layout_constraintEnd_toStartOf="@id/plant_spinner_frutiferous"
         app:layout_constraintTop_toBottomOf="@id/textlayout_amount"
         android:layout_marginTop="16dp"/>
 
     <Spinner
-        android:id="@+id/plant_spinner_type"
+        android:id="@+id/plant_spinner_frutiferous"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:autofillHints="Type"
         app:layout_constraintStart_toEndOf="@id/plant_spinner_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textlayout_amount"
@@ -127,7 +120,6 @@
         android:hint="@string/plant_text_description"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/plant_spinner_size">
-
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_description"
             android:layout_width="match_parent"
@@ -135,16 +127,28 @@
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_save"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Salvar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textlayout_description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:backgroundTint="@color/light_green" />
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_back"
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="10dp"
         android:text="@string/back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textlayout_description"
+        app:layout_constraintTop_toBottomOf="@id/button_save"
         app:layout_constraintEnd_toEndOf="parent"
         app:backgroundTint="@color/red"/>
 

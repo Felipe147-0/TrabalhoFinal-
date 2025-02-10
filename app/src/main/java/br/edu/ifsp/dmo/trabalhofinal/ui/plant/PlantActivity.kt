@@ -34,6 +34,14 @@ class PlantActivity : AppCompatActivity() {
         )
         sizeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.plantSpinnerSize.adapter = sizeAdapter
+
+        val frutiferousAdapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_item,
+            listOf("Frutífera", "Não-Frutífera")
+        )
+        frutiferousAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        binding.plantSpinnerFrutiferous.adapter = frutiferousAdapter
     }
 
     private fun setupListeners() {
@@ -50,10 +58,10 @@ class PlantActivity : AppCompatActivity() {
         val species = binding.textSpecies.text.toString().trim()
         val description = binding.textDescription.text.toString().trim()
         val size = Size.entries[binding.plantSpinnerSize.selectedItemPosition]
-        val frutiferous = binding.plantSwitchFrutiferous.isChecked
+        val frutiferous = binding.plantSpinnerFrutiferous.selectedItem.toString() == "Frutífera"
 
-        if (name.isEmpty() || species.isEmpty()) {
-            Toast.makeText(this, "Nome e espécie são obrigatórios", Toast.LENGTH_SHORT).show()
+        if (name.isEmpty() || species.isEmpty() || description.isEmpty()) {
+            Toast.makeText(this, "Preencha todas as informações, por favor!", Toast.LENGTH_SHORT).show()
         } else {
             val plant = Plant(
                 species = species,
