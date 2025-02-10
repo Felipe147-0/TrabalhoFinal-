@@ -1,6 +1,7 @@
 package br.edu.ifsp.dmo.trabalhofinal.data.repository
 
 import br.edu.ifsp.dmo.trabalhofinal.data.dao.PlantDao
+import br.edu.ifsp.dmo.trabalhofinal.data.enums.EPlantSize
 import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant
 
 class PlantRepository(private val plantDao: PlantDao) {
@@ -23,5 +24,9 @@ class PlantRepository(private val plantDao: PlantDao) {
 
     suspend fun getPlantById(id: Long): Plant? {
         return plantDao.selectById(id)
+    }
+
+    suspend fun getPlantsByFilters(size: EPlantSize, isFrutiferous: Boolean): List<Plant> {
+        return plantDao.getPlantsByFilters(size.name, isFrutiferous)
     }
 }

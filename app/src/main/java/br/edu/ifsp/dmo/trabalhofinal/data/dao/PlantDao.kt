@@ -25,4 +25,7 @@ interface PlantDao {
     @Query("SELECT * FROM plant WHERE id = :id LIMIT 1")
     suspend fun selectById(id: Long): Plant
 
+    @Query("SELECT * FROM plant WHERE size = :sizeName AND frutiferous = :isFrutiferous")
+    suspend fun getPlantsByFilters(sizeName: String, isFrutiferous: Boolean): List<Plant>
+
 }
