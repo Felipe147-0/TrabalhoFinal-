@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -110,6 +112,22 @@ class LoggedActivity : AppCompatActivity() {
     }
 
     private fun setupLaunchers() {
+        requestResultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult(),
+            ActivityResultCallback {
+                if(it.resultCode == RESULT_OK){
 
+                }
+            }
+        )
+
+        registerResultLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult(),
+            ActivityResultCallback {
+                if(it.resultCode == RESULT_OK){
+
+                }
+            }
+        )
     }
 }
