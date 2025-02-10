@@ -65,7 +65,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun setupSpinner() {
-        val states = EUF.entries.toTypedArray()
+        val states = EUF.entries.map{ it.stateName}
         val spinner = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_dropdown_item,
