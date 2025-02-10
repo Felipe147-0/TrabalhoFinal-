@@ -6,11 +6,11 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ActivityStockBinding
-import br.edu.ifsp.dmo.trabalhofinal.ui.adapter.PlantAdapter
+import br.edu.ifsp.dmo.trabalhofinal.ui.adapter.PlantUserAdapter
 
 class StockActivity : AppCompatActivity() {
     private lateinit var binding: ActivityStockBinding
-    private lateinit var plantAdapter: PlantAdapter
+    private lateinit var plantUserAdapter: PlantUserAdapter
     private val viewModel: StockViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,17 +24,17 @@ class StockActivity : AppCompatActivity() {
     }
 
     private fun setupUI() {
-        plantAdapter = PlantAdapter()
+        plantUserAdapter = PlantUserAdapter()
         binding.recyclerViewStock.apply {
             layoutManager = LinearLayoutManager(this@StockActivity)
-            adapter = plantAdapter
+            adapter = plantUserAdapter
         }
     }
 
     private fun setupObservers() {
         viewModel.plantUsers.observe(this) { (plantUsers, plantMap) ->
-            plantAdapter.updatePlantMap(plantMap)
-            plantAdapter.submitList(plantUsers)
+            plantUserAdapter.updatePlantMap(plantMap)
+            plantUserAdapter.submitList(plantUsers)
         }
     }
 

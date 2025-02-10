@@ -1,18 +1,25 @@
 package br.edu.ifsp.dmo.trabalhofinal.ui.adapter
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant
-import br.edu.ifsp.dmo.trabalhofinal.data.model.PlantUser
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ItemPlantBinding
 
-class PlantAdapter : ListAdapter<PlantUser, PlantAdapter.PlantViewHolder>(DiffCallback()) {
+class PlantAdapter (private val plants: List<Plant>, private val onItemClickListener: (Plant) -> Unit) : RecyclerView.Adapter<PlantAdapter.PlantViewHolder>() {
 
-    private var plantMap: Map<Long, Plant> = emptyMap()
+    inner class PlantViewHolder(private val binding: ItemPlantBinding) : RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(plant: Plant) {
+            binding.plantName.text = plant.name // Usando ViewBinding para definir o nome
+            binding.plantSize.text = plant.size.name // Tamanho da planta
+
+
+            itemView.setOnClickListener {
+                onItemClickListener(plant)
+            }
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantViewHolder {
         val binding = ItemPlantBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -20,34 +27,10 @@ class PlantAdapter : ListAdapter<PlantUser, PlantAdapter.PlantViewHolder>(DiffCa
     }
 
     override fun onBindViewHolder(holder: PlantViewHolder, position: Int) {
-        val plantUser = getItem(position)
-        val plant = plantMap[plantUser.idPlant]
-        holder.bind(plantUser, plant)
+        holder.bind(plants[position])
     }
 
-    @SuppressLint("NotifyDataSetChanged")
-    fun updatePlantMap(newMap: Map<Long, Plant>) {
-        plantMap = newMap
-        notifyDataSetChanged()
-    }
-
-    class PlantViewHolder(private val binding: ItemPlantBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(plantUser: PlantUser, plant: Plant?) {
-            binding.textPlantName.text = plant?.name ?: "Desconhecido"
-            binding.textSpecies.text = plant?.species ?: "Desconhecido"
-            binding.textSize.text = (plant?.size ?: "Desconhecido").toString()
-            binding.textQuantity.text = "Quantidade: ${plantUser.quantity}"
-        }
-    }
-
-    class DiffCallback : DiffUtil.ItemCallback<PlantUser>() {
-        override fun areItemsTheSame(oldItem: PlantUser, newItem: PlantUser): Boolean {
-            return oldItem.idPlant == newItem.idPlant && oldItem.idUser == newItem.idUser
-        }
-
-        @SuppressLint("DiffUtilEquals")
-        override fun areContentsTheSame(oldItem: PlantUser, newItem: PlantUser): Boolean {
-            return oldItem == newItem
-        }
+    override fun getItemCount(): Int {
+        return plants.size
     }
 }

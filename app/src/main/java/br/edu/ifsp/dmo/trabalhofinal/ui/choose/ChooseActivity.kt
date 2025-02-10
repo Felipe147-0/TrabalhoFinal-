@@ -15,7 +15,7 @@ import br.edu.ifsp.dmo.trabalhofinal.data.enums.EPlantSize
 import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ActivityChooseBinding
 import br.edu.ifsp.dmo.trabalhofinal.databinding.DialogFilteredPlantsBinding
-import br.edu.ifsp.dmo.trabalhofinal.ui.choose.adapter.PlantAdapter
+import br.edu.ifsp.dmo.trabalhofinal.ui.adapter.PlantAdapter
 import br.edu.ifsp.dmo.trabalhofinal.ui.logged.LoggedActivity
 
 class ChooseActivity : AppCompatActivity() {
