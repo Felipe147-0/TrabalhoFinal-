@@ -26,7 +26,7 @@ class ChooseViewModel(application: Application)   : AndroidViewModel(application
 
 
 
-    fun fetchFilteredPlants(size: EPlantSize, isFrutiferous: Boolean){
+    fun FetchFilteredPlants(size: EPlantSize, isFrutiferous: Boolean){
         viewModelScope.launch {
             _filteredPlants.value = repository.getPlantsByFilters(size,isFrutiferous)
         }
