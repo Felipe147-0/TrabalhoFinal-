@@ -2,6 +2,7 @@ package br.edu.ifsp.dmo.trabalhofinal.ui.main
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultCallback
@@ -43,12 +44,12 @@ class MainActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult(),
             ActivityResultCallback {
                 if(it.resultCode== RESULT_OK){
-                    val tipo = if(it.data?.getStringExtra("tipo")=="Fornecedor"){
+                    val tipo = if(it.data?.getStringExtra("type")=="Fornecedor"){
                         EUserType.SUPPLIER
                     }else{
                         EUserType.CLIENT
                     }
-
+                    Log.v("USERTYPE",tipo.toString())
                     val name = it.data?.getStringExtra("name")
                     val street = it.data?.getStringExtra("street")
                     val district = it.data?.getStringExtra("district")

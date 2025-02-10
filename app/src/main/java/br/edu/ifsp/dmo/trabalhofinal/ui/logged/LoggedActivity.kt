@@ -2,6 +2,7 @@ package br.edu.ifsp.dmo.trabalhofinal.ui.logged
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
@@ -21,8 +22,7 @@ import br.edu.ifsp.dmo.trabalhofinal.ui.stock.StockActivity
 class LoggedActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoggedBinding
     private lateinit var viewModel: LoggedViewModel
-    private lateinit var requestResultLauncher: ActivityResultLauncher<Intent>
-    private lateinit var registerResultLauncher: ActivityResultLauncher<Intent>
+    private lateinit var resultLauncher: ActivityResultLauncher<Intent>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +46,7 @@ class LoggedActivity : AppCompatActivity() {
 
             val id = user.id
             binding.userId.text = id.toString()
-
+            Log.v("USERTYPE",user.userType.toString())
             if (user.userType == EUserType.SUPPLIER) {
                 binding.clientButtonRequest.visibility = View.GONE
                 binding.supplierButtonStock.visibility = View.VISIBLE
@@ -85,14 +85,13 @@ class LoggedActivity : AppCompatActivity() {
 
     private fun handleRegister() {
         val mIntent = Intent(this,PlantActivity::class.java)
-        mIntent.putExtra("user_id",binding.userId.text.toString())
-        registerResultLauncher.launch(mIntent)
+        startActivity(mIntent)
     }
 
     private fun handleRequest() {
         val mIntent = Intent(this,ChooseActivity::class.java)
         mIntent.putExtra("user_id",binding.userId.text.toString())
-        requestResultLauncher.launch(mIntent)
+        resultLauncher.launch(mIntent)
     }
 
     private fun handleStatistics() {
@@ -113,16 +112,7 @@ class LoggedActivity : AppCompatActivity() {
     }
 
     private fun setupLaunchers() {
-        requestResultLauncher = registerForActivityResult(
-            ActivityResultContracts.StartActivityForResult(),
-            ActivityResultCallback {
-                if(it.resultCode == RESULT_OK){
-
-                }
-            }
-        )
-
-        registerResultLauncher = registerForActivityResult(
+        resultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult(),
             ActivityResultCallback {
                 if(it.resultCode == RESULT_OK){
