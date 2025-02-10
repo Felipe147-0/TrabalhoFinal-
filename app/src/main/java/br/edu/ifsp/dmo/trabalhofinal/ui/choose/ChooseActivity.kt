@@ -4,6 +4,7 @@ import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Toast
 
 
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,7 @@ import br.edu.ifsp.dmo.trabalhofinal.data.enums.EPlantSize
 import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ActivityChooseBinding
 import br.edu.ifsp.dmo.trabalhofinal.databinding.DialogFilteredPlantsBinding
+import br.edu.ifsp.dmo.trabalhofinal.databinding.DialogQuantityBinding
 import br.edu.ifsp.dmo.trabalhofinal.ui.adapter.PlantAdapter
 import br.edu.ifsp.dmo.trabalhofinal.ui.logged.LoggedActivity
 
@@ -66,16 +68,43 @@ class ChooseActivity : AppCompatActivity() {
         dialog.setContentView(binding.root)
 
         val adapter = PlantAdapter(plants){plant ->
-            val mintent = Intent(this,LoggedActivity::class.java).apply {
-                putExtra("ID_PLANT",plant.id)
-            }
-            setResult(RESULT_OK,mintent)
+            showQuantityDialog(plant)
             dialog.dismiss()
-            finish()
         }
 
         binding.recyclerViewFilteredPlants.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewFilteredPlants.adapter = adapter
+
+        dialog.show()
+    }
+
+
+    private fun showQuantityDialog(plant: Plant) {
+        val dialog = Dialog(this)
+        val binding = DialogQuantityBinding.inflate(layoutInflater)
+        dialog.setContentView(binding.root)
+
+        binding.dialogQTTitle.text = "Escolha a quantidade de mudas da planta ${plant.name}"
+
+        binding.buttonQTConfirm.setOnClickListener {
+            val quantity = binding.textQTQuantity.text.toString().toIntOrNull() ?: 0
+
+            if (quantity > 0) {
+                val intent = Intent(this, LoggedActivity::class.java).apply {
+                    putExtra("PLANT_ID", plant.id)
+                    putExtra("PLANT_QUANTITY", quantity)
+                }
+                setResult(RESULT_OK, intent)
+                finish()
+            } else {
+                Toast.makeText(this, "Digite uma quantidade válida!", Toast.LENGTH_SHORT).show()
+            }
+            dialog.dismiss()
+        }
+
+        binding.buttonQTCancel.setOnClickListener {
+            dialog.dismiss()
+        }
 
         dialog.show()
     }
