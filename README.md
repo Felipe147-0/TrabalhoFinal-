@@ -1,4 +1,6 @@
 Nomes: 
+João Pedro de Almeida Andolpho AQ3022501
+Guilherme Siguli Crespo AQ3022889
 Felipe Paganini de Abreu AQ3016439
 Deivid Pereira Brito AQ3022749
 
