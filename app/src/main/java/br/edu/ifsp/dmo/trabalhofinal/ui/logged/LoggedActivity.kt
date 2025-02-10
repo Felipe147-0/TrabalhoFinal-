@@ -14,7 +14,7 @@ import br.edu.ifsp.dmo.trabalhofinal.data.enums.EUserType
 import br.edu.ifsp.dmo.trabalhofinal.data.model.User
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ActivityLoggedBinding
 import br.edu.ifsp.dmo.trabalhofinal.ui.choose.ChooseActivity
-/*import br.edu.ifsp.dmo.trabalhofinal.ui.plant.PlantActivity*/
+import br.edu.ifsp.dmo.trabalhofinal.ui.plant.PlantActivity
 import br.edu.ifsp.dmo.trabalhofinal.ui.statistics.StatisticsActivity
 import br.edu.ifsp.dmo.trabalhofinal.ui.stock.StockActivity
 
@@ -68,9 +68,9 @@ class LoggedActivity : AppCompatActivity() {
             handleRequest()
         }
 
-        /*binding.supplierButtonRegister.setOnClickListener {
+        binding.supplierButtonRegister.setOnClickListener {
             handleRegister()
-        }*/
+        }
 
         binding.supplierButtonStock.setOnClickListener {
             handleStock()
@@ -83,11 +83,11 @@ class LoggedActivity : AppCompatActivity() {
         startActivity(mIntent)
     }
 
-    /*private fun handleRegister() {
+    private fun handleRegister() {
         val mIntent = Intent(this,PlantActivity::class.java)
         mIntent.putExtra("user_id",binding.userId.text.toString())
         registerResultLauncher.launch(mIntent)
-    }*/
+    }
 
     private fun handleRequest() {
         val mIntent = Intent(this,ChooseActivity::class.java)
