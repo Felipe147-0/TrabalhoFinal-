@@ -12,9 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TrabalhoFinal"
         tools:targetApi="31">
-        <activity
-            android:name=".ui.choose.dialog_filtered_plants"
-            android:exported="false" />
+
         <activity
             android:name=".ui.stock.StockActivity"
             android:exported="false" />

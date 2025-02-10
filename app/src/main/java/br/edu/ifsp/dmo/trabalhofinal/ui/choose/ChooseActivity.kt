@@ -3,22 +3,18 @@ package br.edu.ifsp.dmo.trabalhofinal.ui.choose
 import android.app.Dialog
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.LinearLayout
-import android.widget.Spinner
+
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.edu.ifsp.dmo.trabalhofinal.R
-import br.edu.ifsp.dmo.trabalhofinal.data.database.AppDatabase
+
 import br.edu.ifsp.dmo.trabalhofinal.data.enums.EPlantSize
 import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant
-import br.edu.ifsp.dmo.trabalhofinal.data.repository.PlantRepository
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ActivityChooseBinding
-import br.edu.ifsp.dmo.trabalhofinal.databinding.ActivityDialogFilteredPlantsBinding
+import br.edu.ifsp.dmo.trabalhofinal.databinding.DialogFilteredPlantsBinding
 import br.edu.ifsp.dmo.trabalhofinal.ui.choose.adapter.PlantAdapter
-import br.edu.ifsp.dmo.trabalhofinal.ui.plant.PlantViewModel
 
 class ChooseActivity : AppCompatActivity() {
     private lateinit var plantViewModel: ChooseViewModel
@@ -63,7 +59,7 @@ class ChooseActivity : AppCompatActivity() {
     private fun showFilteredPlantsDialog(plants: List<Plant>) {
         val dialog = Dialog(this)
 
-        val binding = ActivityDialogFilteredPlantsBinding.inflate(layoutInflater)
+        val binding = DialogFilteredPlantsBinding.inflate(layoutInflater)
 
         dialog.setContentView(binding.root)
 
