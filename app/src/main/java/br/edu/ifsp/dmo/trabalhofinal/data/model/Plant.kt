@@ -21,10 +21,10 @@ class Plant (
     @ColumnInfo(name = "size")
     var size : EPlantSize,
 
-    @ColumnInfo(name = "is_native")
-    var is_native: Boolean,
-
     @ColumnInfo(name = "frutiferous")
-    var frutiferous: Boolean
+    var frutiferous: Boolean,
+
+    @ColumnInfo(name = "description")
+    var description: String
 ) {
 }

@@ -8,7 +8,7 @@ import br.edu.ifsp.dmo.trabalhofinal.R
 import br.edu.ifsp.dmo.trabalhofinal.data.enums.EPlantSize
 import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ActivityPlantBinding
-/*import br.edu.ifsp.dmo.trabalhofinal.ui.plant.PlantViewModel
+import br.edu.ifsp.dmo.trabalhofinal.ui.plant.PlantViewModel
 
 typealias Size = EPlantSize
 
@@ -59,11 +59,12 @@ class PlantActivity : AppCompatActivity() {
                 species = species,
                 name = name,
                 size = size,
-                frutiferous = frutiferous
+                frutiferous = frutiferous,
+                description = description
             )
             viewModel.insertPlant(plant)
             Toast.makeText(this, "Planta cadastrada com sucesso!", Toast.LENGTH_SHORT).show()
             finish()
         }
     }
-}*/
+}
