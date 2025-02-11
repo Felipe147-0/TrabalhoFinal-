@@ -1,15 +1,14 @@
-Nomes: 
-João Pedro de Almeida Andolpho AQ3022501
-Guilherme Siguli Crespo AQ3022889
-Felipe Paganini de Abreu AQ3016439
-Deivid Pereira Brito AQ3022749
+# Nomes:
+João Pedro de Almeida Andolpho AQ3022501  <br>
+Guilherme Siguli Crespo AQ3022889  <br>
+Felipe Paganini de Abreu AQ3016439  <br>
+Deivid Pereira Brito AQ3022749  <br>
 
-
-Nome aplicativo: Conexão Verde
+# Nome aplicativo: Conexão Verde 
 
 Proposta de resolução social: Revitalização arbórea urbana ou rural, com plantio de arvores
 nativas da região (em que está sendo utilizado) ou frutíferas, através de doação voluntaria e 
-plantio por cidadãos interessados.
+plantio por cidadãos interessados.  <br>
 O Seguinte projeto se apresenta por meio de um aplicativo que propõe facilitar o plantio de 
 arvores nas cidades, aproximando viveiros, ongs ou empresas que fomentam o reflorestamento e 
 possuem mudas, ou mesmo donos de sítios e chácaras que por boa vontade desejam compartilhar suas 
@@ -18,18 +17,21 @@ calçada, em seu quintal ou em áreas que estão degradas tais como praças, can
 centrais de avenidas ou encostas de rios que sofreram algum processo de antropomorfização 
 severo como desmatamento ou queimadas. O aplicativo tem uma interface simples tanto para o 
 fornecedor cadastrar suas mudas quanto para o “cliente” que busca encontrar uma arvore que
-melhor se adeque ao seu desejo.
+melhor se adeque ao seu desejo.  <br>
 Resumidamente, o aplicativo fornece de maneira simples, uma área para um “fornecedor” se cadastrar
 com seus dados e assim, poder listar suas mudas seguindo padrões tais como, se a planta é nativa 
-da região ou não, se é frutífera, e qual seu tamanho, além claro, seu nome. 
+da região ou não, se é frutífera, e qual seu tamanho, além de claro, seu nome.  <br>
 Em outro lado, o interessado em encontrar uma muda, se cadastra, com seus dados e após isso, 
 tem acesso a uma área de busca, onde escolherá qual tipo de muda deseja, através da escolha de 
 tamanho, e tipo de muda (nativa ou frutífera), após isso será listado as mudas cadastradas no sistema 
 por seus respectivos fornecedores. Após a escolha, o interessado recebera uma lista de arvores possíveis 
-e então os possíveis viveiros que as possuem e seus dados de contato.
-O aplicativo também conta com uma área de educação, onde é possível ver notícias cadastradas sobre ecologia ou ambientalismo.
+e então os possíveis viveiros que as possuem e seus dados de contato.  <br>
+O aplicativo também conta com uma área de educação, onde é possível ver notícias cadastradas sobre ecologia ou ambientalismo.  <br>
 
-Resumo das funcionalidades: 
-Cadastro de usuários: Os usuários podem se registrar no sistema fornecendo nome, e-mail e senha e qual tipo de usuario (cliente ou fornecedor).
-Cadastro de plantas: o fornecedor cadastrado pode inserir valores para mudas de plantas, como nome,  tamanho, tipo
+# Resumo das funcionalidades
+## Cadastro de usuários:  <br>
+Os usuários podem se registrar no sistema fornecendo nome, e-mail e senha e qual tipo de usuario (cliente ou fornecedor). <br>
+## Cadastro de plantas:  <br>
+o fornecedor cadastrado pode inserir valores para mudas de plantas, como nome,  tamanho, tipo.  <br>
 
+# Tecnologias utilizadas
