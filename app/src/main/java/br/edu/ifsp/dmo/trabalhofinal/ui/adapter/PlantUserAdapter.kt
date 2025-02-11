@@ -10,16 +10,16 @@ import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant
 import br.edu.ifsp.dmo.trabalhofinal.data.model.PlantUser
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ItemStockBinding
 
-class PlantUserAdapter : ListAdapter<PlantUser, PlantUserAdapter.PlantViewHolder>(DiffCallback()) {
+class PlantUserAdapter : ListAdapter<PlantUser, PlantUserAdapter.PlantUserViewHolder>(DiffCallback()) {
 
     private var plantMap: Map<Long, Plant> = emptyMap()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlantUserViewHolder {
         val binding = ItemStockBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return PlantViewHolder(binding)
+        return PlantUserViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: PlantViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PlantUserViewHolder, position: Int) {
         val plantUser = getItem(position)
         val plant = plantMap[plantUser.idPlant]
         holder.bind(plantUser, plant)
@@ -31,7 +31,7 @@ class PlantUserAdapter : ListAdapter<PlantUser, PlantUserAdapter.PlantViewHolder
         notifyDataSetChanged()
     }
 
-    class PlantViewHolder(private val binding: ItemStockBinding) : RecyclerView.ViewHolder(binding.root) {
+    class PlantUserViewHolder(private val binding: ItemStockBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(plantUser: PlantUser, plant: Plant?) {
             binding.textPlantName.text = plant?.name ?: "Desconhecido"
             binding.textSpecies.text = plant?.species ?: "Desconhecido"
