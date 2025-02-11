@@ -59,19 +59,25 @@ Caso prefira, você pode fazer um clone deste projeto e rodar via emulador no am
 
 # Telas do App
 ### Cadastro de usuários:
-![Texto alternativo](caminho/para/sua/imagem.png)
+![Texto alternativo](printsapp/cadastro.jpg)
 
 ### Login:
-![Texto alternativo](caminho/para/sua/imagem.png)
+![Texto alternativo](printsapp/login.jpg)
+
+### Tela Inicial:
+![Texto alternativo](printsapp/telainicial.jpg)
+![Texto alternativo](printsapp/telainicial2.jpg)
 
 ### Cadastro de plantas: 
-![Texto alternativo](caminho/para/sua/imagem.png)
+![Texto alternativo](printsapp/cadastromuda.jpg)
 
 ### Estatísticas:
-![Texto alternativo](caminho/para/sua/imagem.png)
+![Texto alternativo](printsapp/estatisticas.jpg)
 
 ### Requisição de plantas:  
-![Texto alternativo](caminho/para/sua/imagem.png)
+![Texto alternativo](printsapp/requisitarmuda.jpg)
+![Texto alternativo](printsapp/requisitarmuda2.jpg)
+![Texto alternativo](printsapp/requisitarmuda3.jpg)
 
 ### Saiba mais!
-![Texto alternativo](caminho/para/sua/imagem.png)
+![Texto alternativo](printsapp/saibamais.jpg)
