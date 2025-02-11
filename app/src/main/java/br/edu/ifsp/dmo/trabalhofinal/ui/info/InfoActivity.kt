@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.dmo.trabalhofinal.R
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ActivityInfoBinding
-import br.edu.ifsp.dmo.trabalhofinal.ui.main.MainActivity
 
 class InfoActivity : AppCompatActivity() {
 
@@ -24,24 +23,23 @@ class InfoActivity : AppCompatActivity() {
         val btnVoltar = binding.buttonBack
 
         txtLink1.setOnClickListener {
-            val mintent = Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.link1)))
+            val mintent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link1)))
             startActivity(mintent)
         }
 
         txtlink2.setOnClickListener {
-            val mintent = Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.link2)))
+            val mintent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link2)))
             startActivity(mintent)
         }
 
         txtlink3.setOnClickListener {
-            val mintent = Intent(Intent.ACTION_VIEW,Uri.parse(getString(R.string.link3)))
+            val mintent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.link3)))
             startActivity(mintent)
         }
 
         btnVoltar.setOnClickListener {
             finish()
         }
-
 
 
     }

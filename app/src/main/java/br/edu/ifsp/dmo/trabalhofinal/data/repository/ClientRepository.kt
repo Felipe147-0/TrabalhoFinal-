@@ -8,7 +8,7 @@ class ClientRepository(context: Context) {
     private val database = AppDatabase.getInstance(context)
     private val dao = database.getClientDao()
 
-    suspend fun insert(client: Client) : Boolean{
+    suspend fun insert(client: Client): Boolean {
         return dao.insert(client) > 0
     }
 }

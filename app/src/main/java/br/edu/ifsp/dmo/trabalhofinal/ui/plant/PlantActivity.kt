@@ -2,14 +2,13 @@ package br.edu.ifsp.dmo.trabalhofinal.ui.plant
 
 import android.app.Activity
 import android.os.Bundle
-import android.widget.*
+import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import br.edu.ifsp.dmo.trabalhofinal.R
 import br.edu.ifsp.dmo.trabalhofinal.data.enums.EPlantSize
 import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ActivityPlantBinding
-import br.edu.ifsp.dmo.trabalhofinal.ui.plant.PlantViewModel
 
 typealias Size = EPlantSize
 
@@ -63,7 +62,8 @@ class PlantActivity : AppCompatActivity() {
         val quantity = binding.textQuantity.text.toString().toIntOrNull() ?: 0
 
         if (name.isEmpty() || species.isEmpty() || description.isEmpty()) {
-            Toast.makeText(this, "Preencha todas as informações, por favor!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Preencha todas as informações, por favor!", Toast.LENGTH_SHORT)
+                .show()
         } else {
             val plant = Plant(
                 species = species,

@@ -4,8 +4,9 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 
-@Entity(tableName = "address_user",
-    primaryKeys = ["id_user" , "id_address"],
+@Entity(
+    tableName = "address_user",
+    primaryKeys = ["id_user", "id_address"],
     foreignKeys = [
         ForeignKey(
             entity = Address::class,

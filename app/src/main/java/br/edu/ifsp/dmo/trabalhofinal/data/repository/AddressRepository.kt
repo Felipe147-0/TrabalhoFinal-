@@ -8,7 +8,7 @@ class AddressRepository(context: Context) {
     private val database = AppDatabase.getInstance(context)
     private val dao = database.getAddressDao()
 
-    suspend fun insert(address: Address) : Long{
+    suspend fun insert(address: Address): Long {
         return dao.insert(address)
     }
 }

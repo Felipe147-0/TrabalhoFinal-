@@ -6,20 +6,20 @@ import androidx.room.PrimaryKey
 import br.edu.ifsp.dmo.trabalhofinal.data.enums.EPlantSize
 
 @Entity(tableName = "plant")
-class Plant (
+class Plant(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id : Long = 0,
+    var id: Long = 0,
 
     @ColumnInfo(name = "species")
-    var species : String,
+    var species: String,
 
     @ColumnInfo(name = "name")
-    var name : String,
+    var name: String,
 
     @ColumnInfo(name = "size")
-    var size : EPlantSize,
+    var size: EPlantSize,
 
     @ColumnInfo(name = "frutiferous")
     var frutiferous: Boolean,

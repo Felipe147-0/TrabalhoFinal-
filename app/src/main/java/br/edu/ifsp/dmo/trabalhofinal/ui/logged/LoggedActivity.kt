@@ -70,19 +70,19 @@ class LoggedActivity : AppCompatActivity() {
     }
 
     private fun handleStock() {
-        val mIntent = Intent(this,StockActivity::class.java)
-        mIntent.putExtra("user_id",binding.userId.text.toString())
+        val mIntent = Intent(this, StockActivity::class.java)
+        mIntent.putExtra("user_id", binding.userId.text.toString())
         startActivity(mIntent)
     }
 
     private fun handleRegister() {
-        val mIntent = Intent(this,PlantActivity::class.java)
+        val mIntent = Intent(this, PlantActivity::class.java)
         resultLauncher.launch(mIntent)
     }
 
     private fun handleRequest() {
-        val mIntent = Intent(this,ChooseActivity::class.java)
-        mIntent.putExtra("user_id",binding.userId.text.toString())
+        val mIntent = Intent(this, ChooseActivity::class.java)
+        mIntent.putExtra("user_id", binding.userId.text.toString())
         resultLauncher.launch(mIntent)
     }
 
@@ -92,13 +92,13 @@ class LoggedActivity : AppCompatActivity() {
 
     private fun setupObservers() {
         viewModel.loggedOut.observe(this, Observer {
-            Toast.makeText(this,"Logout realizado com sucesso.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Logout realizado com sucesso.", Toast.LENGTH_SHORT).show()
             finish()
         })
 
         viewModel.inserted.observe(this, Observer {
-            if(it){
-                Toast.makeText(this,"Plantas cadastradas com sucesso.", Toast.LENGTH_SHORT).show()
+            if (it) {
+                Toast.makeText(this, "Plantas cadastradas com sucesso.", Toast.LENGTH_SHORT).show()
             }
         })
     }
@@ -107,11 +107,11 @@ class LoggedActivity : AppCompatActivity() {
         resultLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult(),
             ActivityResultCallback {
-                if(it.resultCode == RESULT_OK){
+                if (it.resultCode == RESULT_OK) {
                     val plantId = it.data?.getLongExtra("PLANT_ID", 0L)
                     val quantity = it.data?.getIntExtra("PLANT_QUANTITY", 0)
                     val userId = binding.userId.text.toString()
-                    viewModel.registerNewPlantUser(userId,plantId!!,quantity!!)
+                    viewModel.registerNewPlantUser(userId, plantId!!, quantity!!)
                 }
             }
         )

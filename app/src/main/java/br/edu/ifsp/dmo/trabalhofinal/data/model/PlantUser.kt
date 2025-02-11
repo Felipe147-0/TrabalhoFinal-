@@ -4,8 +4,9 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 
-@Entity(tableName = "plant_user",
-    primaryKeys = ["id_plant" , "id_user"],
+@Entity(
+    tableName = "plant_user",
+    primaryKeys = ["id_plant", "id_user"],
     foreignKeys = [
         ForeignKey(
             entity = Plant::class,
@@ -21,7 +22,7 @@ import androidx.room.ForeignKey
         )
     ]
 )
-class PlantUser (
+class PlantUser(
 
     @ColumnInfo(name = "id_plant")
     var idPlant: Long,

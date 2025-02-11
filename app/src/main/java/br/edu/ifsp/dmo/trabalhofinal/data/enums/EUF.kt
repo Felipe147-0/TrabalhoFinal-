@@ -1,6 +1,6 @@
 package br.edu.ifsp.dmo.trabalhofinal.data.enums
 
-enum class EUF (val stateName: String){
+enum class EUF(val stateName: String) {
 
     AC("Acre"),
     AL("Alagoas"),

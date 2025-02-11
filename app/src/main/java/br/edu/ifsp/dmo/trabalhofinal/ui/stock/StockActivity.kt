@@ -5,8 +5,6 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import br.edu.ifsp.dmo.trabalhofinal.data.repository.PlantRepository
-import br.edu.ifsp.dmo.trabalhofinal.data.repository.PlantUserRepository
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ActivityStockBinding
 import br.edu.ifsp.dmo.trabalhofinal.ui.adapter.PlantUserAdapter
 

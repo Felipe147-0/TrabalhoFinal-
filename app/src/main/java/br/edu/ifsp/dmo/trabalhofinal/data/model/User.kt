@@ -7,9 +7,11 @@ import androidx.room.PrimaryKey
 import br.edu.ifsp.dmo.trabalhofinal.data.enums.EUserType
 import java.io.Serializable
 
-@Entity(tableName = "cv_user",
-    indices = [Index(value = ["email"], unique = true)])
-class User (
+@Entity(
+    tableName = "cv_user",
+    indices = [Index(value = ["email"], unique = true)]
+)
+class User(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
@@ -26,10 +28,10 @@ class User (
 
     @ColumnInfo(name = "name")
     var name: String,
-) : Serializable{
-    companion object{
-        fun authenticate(user: User, email: String, password: String):Boolean{
-            return (user.email==email && user.password==password)
+) : Serializable {
+    companion object {
+        fun authenticate(user: User, email: String, password: String): Boolean {
+            return (user.email == email && user.password == password)
         }
     }
 }

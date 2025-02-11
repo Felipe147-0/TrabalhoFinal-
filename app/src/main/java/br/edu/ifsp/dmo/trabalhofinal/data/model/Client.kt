@@ -5,7 +5,8 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "client",
+@Entity(
+    tableName = "client",
     foreignKeys = [
         ForeignKey(
             entity = User::class,
@@ -15,13 +16,13 @@ import androidx.room.PrimaryKey
         )
     ]
 )
-class Client (
+class Client(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id : Long = 0,
+    var id: Long = 0,
 
     @ColumnInfo(name = "id_cv_user")
-    var idUser : Long
+    var idUser: Long
 ) {
 }

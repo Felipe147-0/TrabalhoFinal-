@@ -8,8 +8,8 @@ class PlantUserRepository(context: Context) {
     private val database = AppDatabase.getInstance(context)
     private val dao = database.getPlantUserDao()
 
-    suspend fun insert(plantUser:PlantUser) : Boolean{
-        return dao.insert(plantUser)>0
+    suspend fun insert(plantUser: PlantUser): Boolean {
+        return dao.insert(plantUser) > 0
     }
 
     suspend fun getPlantsByUser(userId: Long): List<PlantUser> {

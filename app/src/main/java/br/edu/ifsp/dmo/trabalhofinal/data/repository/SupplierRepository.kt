@@ -8,7 +8,7 @@ class SupplierRepository(context: Context) {
     private val database = AppDatabase.getInstance(context)
     private val dao = database.getSupplierDao()
 
-    suspend fun insert(supplier: Supplier) : Boolean{
+    suspend fun insert(supplier: Supplier): Boolean {
         return dao.insert(supplier) > 0
     }
 }

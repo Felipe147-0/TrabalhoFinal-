@@ -4,7 +4,6 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import br.edu.ifsp.dmo.trabalhofinal.data.database.AppDatabase
 import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant

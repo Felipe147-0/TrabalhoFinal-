@@ -26,5 +26,5 @@ interface UserDao {
     suspend fun selectById(id: Long): User
 
     @Query("SELECT * FROM cv_user WHERE email = :email LIMIT 1")
-    suspend fun selectByEmail(email:String): User?
+    suspend fun selectByEmail(email: String): User?
 }

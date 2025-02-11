@@ -15,12 +15,12 @@ class LoggedViewModel(application: Application) : AndroidViewModel(application) 
     private val plantUserRepository = PlantUserRepository(application)
 
     private val _loggedOut = MutableLiveData<Boolean>()
-    val loggedOut : LiveData<Boolean> = _loggedOut
+    val loggedOut: LiveData<Boolean> = _loggedOut
 
     private val _inserted = MutableLiveData<Boolean>()
     val inserted: LiveData<Boolean> = _inserted
 
-    fun logout(){
+    fun logout() {
         viewModelScope.launch {
             dataStoreRepository.logout()
             _loggedOut.value = true
@@ -28,7 +28,7 @@ class LoggedViewModel(application: Application) : AndroidViewModel(application) 
     }
 
     fun registerNewPlantUser(userId: String, plantId: Long, quantity: Int) {
-        val plantUser = PlantUser(plantId,userId.toLong(),quantity)
+        val plantUser = PlantUser(plantId, userId.toLong(), quantity)
         viewModelScope.launch {
             _inserted.value = plantUserRepository.insert(plantUser)
         }

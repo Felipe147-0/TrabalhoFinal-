@@ -10,7 +10,8 @@ import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant
 import br.edu.ifsp.dmo.trabalhofinal.data.model.PlantUser
 import br.edu.ifsp.dmo.trabalhofinal.databinding.ItemStockBinding
 
-class PlantUserAdapter : ListAdapter<PlantUser, PlantUserAdapter.PlantUserViewHolder>(DiffCallback()) {
+class PlantUserAdapter :
+    ListAdapter<PlantUser, PlantUserAdapter.PlantUserViewHolder>(DiffCallback()) {
 
     private var plantMap: Map<Long, Plant> = emptyMap()
 
@@ -31,7 +32,8 @@ class PlantUserAdapter : ListAdapter<PlantUser, PlantUserAdapter.PlantUserViewHo
         notifyDataSetChanged()
     }
 
-    class PlantUserViewHolder(private val binding: ItemStockBinding) : RecyclerView.ViewHolder(binding.root) {
+    class PlantUserViewHolder(private val binding: ItemStockBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(plantUser: PlantUser, plant: Plant?) {
             binding.textPlantName.text = plant?.name ?: "Desconhecido"
             binding.textSpecies.text = plant?.species ?: "Desconhecido"

@@ -12,7 +12,7 @@ import br.edu.ifsp.dmo.trabalhofinal.data.model.Plant
 import br.edu.ifsp.dmo.trabalhofinal.data.repository.PlantRepository
 import kotlinx.coroutines.launch
 
-class ChooseViewModel(application: Application)   : AndroidViewModel(application) {
+class ChooseViewModel(application: Application) : AndroidViewModel(application) {
 
     private val repository: PlantRepository
 
@@ -25,10 +25,9 @@ class ChooseViewModel(application: Application)   : AndroidViewModel(application
     val filteredPlants: LiveData<List<Plant>> = _filteredPlants
 
 
-
-    fun FetchFilteredPlants(size: EPlantSize, isFrutiferous: Boolean){
+    fun FetchFilteredPlants(size: EPlantSize, isFrutiferous: Boolean) {
         viewModelScope.launch {
-            _filteredPlants.value = repository.getPlantsByFilters(size,isFrutiferous)
+            _filteredPlants.value = repository.getPlantsByFilters(size, isFrutiferous)
         }
     }
 }

@@ -38,9 +38,10 @@ class ChooseActivity : AppCompatActivity() {
         observeViewModel()
     }
 
-    private fun setupUI(){
-        val SizeAdapter = ArrayAdapter(this,
-            android.R.layout.simple_spinner_item,EPlantSize.values().map { it.name }.toList()
+    private fun setupUI() {
+        val SizeAdapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_item, EPlantSize.values().map { it.name }.toList()
         )
         SizeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.chooserSpinnerSize.adapter = SizeAdapter
@@ -48,10 +49,11 @@ class ChooseActivity : AppCompatActivity() {
     }
 
 
-    private fun setupListeners(){
+    private fun setupListeners() {
         binding.buttonSearch.setOnClickListener {
             val isFrutiferous = binding.checkboxTypeFrutifera.isChecked
-            val selectedSize = EPlantSize.valueOf(binding.chooserSpinnerSize.selectedItem.toString())
+            val selectedSize =
+                EPlantSize.valueOf(binding.chooserSpinnerSize.selectedItem.toString())
 
             // Chamando a ViewModel para buscar as plantas filtradas
             plantViewModel.FetchFilteredPlants(selectedSize, isFrutiferous)
@@ -67,7 +69,7 @@ class ChooseActivity : AppCompatActivity() {
 
         dialog.setContentView(binding.root)
 
-        val adapter = PlantAdapter(plants){plant ->
+        val adapter = PlantAdapter(plants) { plant ->
             showQuantityDialog(plant)
             dialog.dismiss()
         }

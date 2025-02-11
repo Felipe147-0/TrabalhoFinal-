@@ -73,7 +73,15 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun registerNewUser(tipo: EUserType, name: String?, street: String?, district: String?, city: String?, email: String?, password: String?, state: EUF) {
+    fun registerNewUser(
+        tipo: EUserType,
+        name: String?,
+        street: String?,
+        district: String?,
+        city: String?,
+        email: String?,
+        password: String?,
+        state: EUF) {
         val user = User(email=email!!, password = password!!, name = name!!, userType = tipo)
         val address = Address(uf = state, city = city!!, district = district!!, street = street!!)
         viewModelScope.launch {

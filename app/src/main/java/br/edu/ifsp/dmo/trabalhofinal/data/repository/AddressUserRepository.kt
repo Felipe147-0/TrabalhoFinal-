@@ -8,7 +8,7 @@ class AddressUserRepository(context: Context) {
     private val database = AppDatabase.getInstance(context)
     private val dao = database.getAddressUserDao()
 
-    suspend fun insert(addressUser: AddressUser) : Boolean{
+    suspend fun insert(addressUser: AddressUser): Boolean {
         return dao.insert(addressUser) > 0
     }
 }
