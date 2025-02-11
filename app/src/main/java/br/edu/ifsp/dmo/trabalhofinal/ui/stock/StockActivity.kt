@@ -42,8 +42,10 @@ class StockActivity : AppCompatActivity() {
     }
 
     private fun loadStock() {
-        val userId = intent.getLongExtra("user_id", -1)
-        if (userId != -1L) {
+        val userIdString = intent.getStringExtra("user_id")
+        val userId = userIdString?.toLongOrNull()
+
+        if (userId != null) {
             viewModel.loadStock(userId)
         } else {
             Toast.makeText(this, "Erro ao carregar estoque", Toast.LENGTH_SHORT).show()
