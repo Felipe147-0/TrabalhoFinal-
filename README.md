@@ -29,9 +29,25 @@ e então os possíveis viveiros que as possuem e seus dados de contato.  <br>
 O aplicativo também conta com uma área de educação, onde é possível ver notícias cadastradas sobre ecologia ou ambientalismo.  <br>
 
 # Resumo das funcionalidades
-## Cadastro de usuários:  <br>
-Os usuários podem se registrar no sistema fornecendo nome, e-mail e senha e qual tipo de usuario (cliente ou fornecedor). <br>
-## Cadastro de plantas:  <br>
-o fornecedor cadastrado pode inserir valores para mudas de plantas, como nome,  tamanho, tipo.  <br>
+### Cadastro de usuários:  <br>
+Os usuários podem se registrar no sistema fornecendo nome, e-mail e senha - além do tipo de usuário (cliente ou fornecedor). <br>
+### Login:  <br>
+Um usuário que possui cadastro no aplicativo pode acessar sua conta e as funcionalidades disponibilizadas a partir do login. <br>
+### Cadastro de plantas:  <br>
+O usuário fornecedor cadastrado pode cadastrar mudas de plantas que serão disponibilizadas para requisição por usuários cliente. <br>
+### Estatísticas (usuário-fornecedor):  <br>
+O usuário fornecedor quando logado consegue consultar todas as mudas que o mesmo cadastrou e disponibilizou na plataforma - informações como nome, espécie, tamanho e quantidade são exibidas ao usuário. <br>
+### Requisição de plantas:  <br>
+O usuário cliente consegue requisitar mudas de plantas de usuários fornecedores. <br>
+### Estatísticas (usuário-cliente):  <br>
+O usuário cliente é capaz de consultar todas as mudas que o mesmo requisitou - informações como nome, espécie, tamanho e quantidade são exibidas ao usuário. <br>
+### Saiba mais! <br>
+Qualquer pessoa (mesmo sem login ou cadastro) consegue acessar informações sobre o projeto Conexão Verde e notícias ao redor do tema através da tela inicial. <br>
 
 # Tecnologias utilizadas
+- Padrão room e implementação do SQLite para persistência de dados;
+- Padrão de projeto MVVM;
+- Componente Spinner para design e visual mais agradáveis;
+- RecyclerView e adapters - utilizado nas listagens de dados;
+- Componente dialog;
+- DataStore - armazenamento de preferências de usuário (login e senha);
