@@ -57,6 +57,10 @@ Nosso time de desenvolvimento disponibilizou um .apk neste repositório para que
 Vale ressaltar que este .apk não funciona em dispositivos Apple. <br>
 Caso prefira, você pode fazer um clone deste projeto e rodar via emulador no ambiente de desenvolvimento do Android Studio! <br>
 
+# Aplicativo rodando!
+Caso você não disponha das ferramentas para rodar este aplicativo, não se preocupe! Veja ele rodando no link abaixo. <br>
+https://drive.google.com/file/d/1HMnHT4wfEn5PresX6IH70OYa0yBqMR7E/view
+
 # Telas do App
 ### Cadastro de usuários:
 ![Texto alternativo](printsapp/cadastro.jpg)
