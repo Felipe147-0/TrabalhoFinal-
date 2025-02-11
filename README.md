@@ -57,4 +57,21 @@ Nosso time de desenvolvimento disponibilizou um .apk neste repositório para que
 Vale ressaltar que este .apk não funciona em dispositivos Apple. <br>
 Caso prefira, você pode fazer um clone deste projeto e rodar via emulador no ambiente de desenvolvimento do Android Studio! <br>
 
+# Telas do App
+### Cadastro de usuários:
+![Texto alternativo](caminho/para/sua/imagem.png)
 
+### Login:
+![Texto alternativo](caminho/para/sua/imagem.png)
+
+### Cadastro de plantas: 
+![Texto alternativo](caminho/para/sua/imagem.png)
+
+### Estatísticas:
+![Texto alternativo](caminho/para/sua/imagem.png)
+
+### Requisição de plantas:  
+![Texto alternativo](caminho/para/sua/imagem.png)
+
+### Saiba mais!
+![Texto alternativo](caminho/para/sua/imagem.png)
