@@ -51,3 +51,10 @@ Qualquer pessoa (mesmo sem login ou cadastro) consegue acessar informações sob
 - RecyclerView e adapters - utilizado nas listagens de dados;
 - Componente dialog;
 - DataStore - armazenamento de preferências de usuário (login e senha);
+
+# Como executar este aplicativo?
+Nosso time de desenvolvimento disponibilizou um .apk neste repositório para que você possa instalar ele em seu dispositivo android! <br>
+Vale ressaltar que este .apk não funciona em dispositivos Apple. <br>
+Caso prefira, você pode fazer um clone deste projeto e rodar via emulador no ambiente de desenvolvimento do Android Studio! <br>
+
+
