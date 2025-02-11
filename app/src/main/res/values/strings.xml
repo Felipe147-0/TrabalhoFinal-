@@ -41,4 +41,11 @@
     <string name="link3">https://g1.globo.com/am/amazonas/noticia/2019/07/30/uma-das-capitais-com-piores-indices-de-arborizacao-em-todo-o-pais-manaus-busca-reacao-com-campanhas-de-plantio-de-especies.ghtml</string>
     <string name="link2">https://g1.globo.com/meio-ambiente/noticia/2025/01/10/2024-e-o-primeiro-da-historia-a-ultrapassar-marca-de-15c-de-aquecimento.ghtml</string>
     <string name="link1">https://www.revide.com.br/noticias/cidades/plante-uma-arvore/</string>
+    <string name="str_dialog_title">Digite a quantidade de mudas</string>
+    <string name="str_dialog_quantity">Quantidade de mudas</string>
+    <string name="str_dialog_confirm">Confirmar</string>
+    <string name="str_dialog_cancel">Cancelar</string>
+    <string name="str_dialog_namePlant">Nome da Planta</string>
+    <string name="str_dialog_sizePlant">Tamanho da Planta</string>
+    <string name="str_choose_frutifera">Frutifera?</string>
 </resources>

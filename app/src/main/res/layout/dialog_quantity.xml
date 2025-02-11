@@ -10,7 +10,7 @@
         android:id="@+id/dialogQT_Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Digite a quantidade de mudas"
+        android:text="@string/str_dialog_title"
         android:textSize="18sp"
         android:layout_marginBottom="10dp" />
 
@@ -19,20 +19,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
-        android:hint="Quantidade de mudas" />
+        android:hint="@string/str_dialog_quantity" />
 
     <Button
         android:id="@+id/buttonQT_Confirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirmar"
+        android:text="@string/str_dialog_confirm"
         android:layout_marginTop="10dp" />
 
     <Button
         android:id="@+id/buttonQT_Cancel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cancelar"
+        android:text="@string/str_dialog_cancel"
         android:layout_marginTop="5dp" />
 
 </LinearLayout>
